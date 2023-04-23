@@ -3,7 +3,7 @@ package request;
 import java.util.List;
 import java.util.ArrayList;
 
-public abstract class RequestList extends Request {
+public abstract class RequestMangaList extends Request {
     private final String PATH = "manga";
     private Integer limit = 100;
     private Integer offset = 0;
