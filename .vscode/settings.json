@@ -3,5 +3,12 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
+    ],
+    "cSpell.words": [
+        "bypopularity",
+        "doujin",
+        "manhua",
+        "manhwa",
+        "oneshots"
     ]
 }
