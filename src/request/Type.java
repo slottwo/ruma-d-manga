@@ -1,6 +1,6 @@
 package request;
 
-public enum RankingType {
+public enum Type {
     ALL("all"),
     MANGA("manga"),
     NOVELS("novels"),
@@ -13,7 +13,7 @@ public enum RankingType {
 
     private String type;
 
-    RankingType(String type) {
+    Type(String type) {
         this.type = type;
     }
 

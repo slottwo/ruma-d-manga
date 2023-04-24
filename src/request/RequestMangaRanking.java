@@ -2,7 +2,7 @@ package request;
 
 public class RequestMangaRanking extends RequestMangaList {
     private final String PATH = "manga/ranking";
-    private RankingType type = RankingType.MANGA;
+    private Type type = Type.MANGA;
 
     @Override
     public String getQuery() {
@@ -13,7 +13,7 @@ public class RequestMangaRanking extends RequestMangaList {
         return type.getType();
     }
 
-    public void setType(RankingType type) {
+    public void setType(Type type) {
         this.type = type;
     }
 }
