@@ -1,12 +1,13 @@
 package request;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public abstract class Request {
     private final String API_URL = "https://api.myanimelist.net/v2/";
     private final String PATH = "";
-    private ArrayList<Field> fields = new ArrayList<>();
+    private List<Field> fields = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -38,7 +39,16 @@ public abstract class Request {
     }
 
     public String getFields() {
-        return (fields != null) ? "fields=" + String.join(",", fields) : "";
+        if (fields != null) {
+            List<String> fieldsStrings = new ArrayList<>();
+            
+            for (Field field : fields) {
+                fieldsStrings.add(field.getType());
+            }
+            
+            return "fields=" + String.join(",", fieldsStrings);
+        }
+        return "";
     }
 
     // Special Getters
