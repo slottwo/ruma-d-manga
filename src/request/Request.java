@@ -1,9 +1,12 @@
 package request;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public abstract class Request {
     private final String API_URL = "https://api.myanimelist.net/v2/";
     private final String PATH = "";
-    private String[] fields = null;    
+    private ArrayList<Field> fields = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -12,8 +15,16 @@ public abstract class Request {
 
     // Setters
 
-    public void setFields(String[] fields) {
+    public void setFields(ArrayList<Field> fields) {
         this.fields = fields;
+    }
+
+    public void setFields(Field[] fields) {
+        this.fields = new ArrayList<Field>(Arrays.asList(fields));
+    }
+
+    public void addField(Field field) {
+        this.fields.add(field);
     }
 
     // Getters
@@ -32,7 +43,7 @@ public abstract class Request {
 
     // Special Getters
 
-    public abstract String getPathParameters()  ;
+    public abstract String getPathParameters();
 
     public abstract String getQueryParameters();
 }

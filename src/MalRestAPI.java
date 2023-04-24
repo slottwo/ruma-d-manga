@@ -2,6 +2,7 @@ import java.io.File;
 import java.util.Scanner;
 import java.net.URI;
 import java.net.http.HttpClient;
+import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
@@ -20,14 +21,15 @@ public class MalRestAPI {
         }
 
         HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(new URI("https://api.myanimelist.net/v2/manga?q=jojo&limit=3"))
+                .uri(new URI("https://api.myanimelist.net/v2/manga/0"))
                 .header("X-MAL-CLIENT-ID", CLIENT_ID) // .GET()
                 .build();
 
         HttpClient httpClient = HttpClient.newHttpClient();
-
+        
         HttpResponse<String> getResponse = httpClient.send(getRequest, BodyHandlers.ofString());
 
+        System.out.println(getResponse.statusCode());
         System.out.println(getResponse.body());
     }
 }
