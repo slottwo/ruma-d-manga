@@ -1,12 +1,16 @@
 package request;
 
 public class RequestMangaRanking extends RequestMangaList {
-    private final String PATH = "manga/ranking";
+    private String PATH = "manga/ranking";
     private Type type = Type.MANGA;
 
     @Override
     public String getQuery() {
         return "ranking_type=" + getType();
+    }
+
+    public String getPATH() {
+        return PATH;
     }
 
     public String getType() {

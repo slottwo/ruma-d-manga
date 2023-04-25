@@ -17,6 +17,7 @@ public class RequestMangaSearch extends RequestMangaList {
     }
 
     // Setters
+    
     public void setSearch(String search) throws Exception {
         if (search.length() > 2) {
             if (search.contains("&") | search.contains("=")) {

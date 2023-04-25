@@ -4,12 +4,16 @@ import java.util.List;
 import java.util.ArrayList;
 
 public abstract class RequestMangaList extends Request {
-    private final String PATH = "manga";
+    private String PATH = "manga";
     private Integer limit = 100;
     private Integer offset = 0;
 
     @Override
     public String toString() {
+        return "Request: <" + getURI() + ">";
+    }
+
+    public String getURI() {
         return getAPI_URL() + getPathParameters() + getQueryParameters();
     }
 
@@ -39,9 +43,9 @@ public abstract class RequestMangaList extends Request {
     }
 
     public abstract String getQuery();
-    
+
     // Getters
-    
+
     public String getPATH() {
         return PATH;
     }
@@ -53,18 +57,22 @@ public abstract class RequestMangaList extends Request {
     public String getOffset() {
         return (offset != 0) ? "offset=" + offset : "";
     }
-    
+
     // Setters
 
-    public void setLimit(Integer limit) {
-        if (0 < limit && limit < 100) {
+    public void setLimit(Integer limit) throws Exception {
+        if (0 < limit && limit <= 100) {
             this.limit = limit;
+        } else {
+            throw new Exception("Limit must be in (0,100].");
         }
     }
 
-    public void setOffset(Integer offset) {
-        if (offset > 0) {
+    public void setOffset(Integer offset) throws Exception {
+        if (offset >= 0) {
             this.offset = offset;
+        } else {
+            throw new Exception("Offset must be non-negative.");
         }
     }
 }

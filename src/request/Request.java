@@ -6,12 +6,16 @@ import java.util.Arrays;
 
 public abstract class Request {
     private final String API_URL = "https://api.myanimelist.net/v2/";
-    private final String PATH = "";
+    private String PATH = "";
     private List<Field> fields = new ArrayList<>();
 
     @Override
     public String toString() {
-        return getAPI_URL() + getPATH() + getPathParameters() + getQueryParameters();
+        return getURI();
+    }
+
+    public String getURI() {
+        return getAPI_URL() + getPathParameters() + getQueryParameters();
     }
 
     // Setters
@@ -39,16 +43,17 @@ public abstract class Request {
     }
 
     public String getFields() {
-        if (fields != null) {
-            List<String> fieldsStrings = new ArrayList<>();
-            
-            for (Field field : fields) {
-                fieldsStrings.add(field.getType());
-            }
-            
-            return "fields=" + String.join(",", fieldsStrings);
+        if (fields.isEmpty()) {
+            return "";
         }
-        return "";
+
+        List<String> fieldsStrings = new ArrayList<>();
+
+        for (Field field : fields) {
+            fieldsStrings.add(field.getType());
+        }
+
+        return "fields=" + String.join(",", fieldsStrings);
     }
 
     // Special Getters
