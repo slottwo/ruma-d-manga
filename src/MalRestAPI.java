@@ -4,7 +4,6 @@ import java.util.Scanner;
 import request.RequestMangaRanking;
 import request.Type;
 
-import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -29,7 +28,7 @@ public class MalRestAPI {
         System.out.println(getTop10Manhwas);
 
         HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(new URI(getTop10Manhwas.getURI()))
+                .uri(getTop10Manhwas.getURI())
                 .header("X-MAL-CLIENT-ID", CLIENT_ID) // .GET()
                 .build();
 

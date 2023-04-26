@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 public abstract class Request {
     private final String API_URL = "https://api.myanimelist.net/v2/";
     private String PATH = "";
@@ -11,11 +14,16 @@ public abstract class Request {
 
     @Override
     public String toString() {
-        return getURI();
+        try {
+            return "Request: <" + getURI() + ">";
+        } catch (URISyntaxException exception) {
+            exception.printStackTrace();
+        }
+        return "Request: <>";
     }
 
-    public String getURI() {
-        return getAPI_URL() + getPathParameters() + getQueryParameters();
+    public URI getURI() throws URISyntaxException {
+        return new URI(getAPI_URL() + getPathParameters() + getQueryParameters());
     }
 
     // Setters

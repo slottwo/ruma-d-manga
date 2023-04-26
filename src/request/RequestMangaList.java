@@ -3,6 +3,9 @@ package request;
 import java.util.List;
 import java.util.ArrayList;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 public abstract class RequestMangaList extends Request {
     private String PATH = "manga";
     private Integer limit = 100;
@@ -10,11 +13,16 @@ public abstract class RequestMangaList extends Request {
 
     @Override
     public String toString() {
-        return "Request: <" + getURI() + ">";
+        try {
+            return "Request: <" + getURI() + ">";
+        } catch (URISyntaxException exception) {
+            exception.printStackTrace();
+        }
+        return "Request: <>";
     }
 
-    public String getURI() {
-        return getAPI_URL() + getPathParameters() + getQueryParameters();
+    public URI getURI() throws URISyntaxException {
+        return new URI(getAPI_URL() + getPathParameters() + getQueryParameters());
     }
 
     // Special Getters
