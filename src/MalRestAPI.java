@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 
-import request.RequestMangaRanking;
+import request.RequestRanking;
 import request.Type;
 
 import java.net.http.HttpClient;
@@ -22,15 +22,21 @@ public class MalRestAPI {
             }
         }
 
-        RequestMangaRanking getTop10Manhwas = new RequestMangaRanking();
+        // Criando o formato da requisição
+
+        RequestRanking getTop10Manhwas = new RequestRanking();
+
         getTop10Manhwas.setType(Type.MANHWA);
         getTop10Manhwas.setLimit(10);
+
         System.out.println(getTop10Manhwas);
 
         HttpRequest getRequest = HttpRequest.newBuilder()
                 .uri(getTop10Manhwas.getURI())
                 .header("X-MAL-CLIENT-ID", CLIENT_ID) // .GET()
                 .build();
+
+        // Executando requisição
 
         HttpClient httpClient = HttpClient.newHttpClient();
 

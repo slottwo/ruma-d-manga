@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public abstract class RequestMangaList extends Request {
+public abstract class RequestList extends Request implements RequestListInterface{
     private String PATH = "manga";
     private Integer limit = 100;
     private Integer offset = 0;

@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public abstract class Request {
+public abstract class Request implements RequestInterface {
     private final String API_URL = "https://api.myanimelist.net/v2/";
     private String PATH = "";
     private List<Field> fields = new ArrayList<>();

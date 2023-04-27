@@ -1,6 +1,6 @@
 package request;
 
-public class RequestMangaSearch extends RequestMangaList {
+public class RequestSearch extends RequestList {
     private String search;
 
     // Special Getters

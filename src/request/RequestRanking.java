@@ -1,6 +1,6 @@
 package request;
 
-public class RequestMangaRanking extends RequestMangaList {
+public class RequestRanking extends RequestList {
     private String PATH = "manga/ranking";
     private Type type = Type.MANGA;
 
