@@ -4,6 +4,10 @@ public class RequestManga extends Request {
     private final String PATH = "manga";
     private Integer id;
 
+    public String getPATH() {
+        return PATH;
+    }
+
     public String getId() {
         return id.toString();
     }
