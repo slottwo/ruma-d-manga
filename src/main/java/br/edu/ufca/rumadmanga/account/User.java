@@ -13,7 +13,7 @@ import java.util.HashMap;
 public abstract class User implements UserInterface {
 
     // User Database
-    private static HashMap<String, User> database = new HashMap<>();
+    private static HashMap<String, User> users = new HashMap<>();
 
     // Guest User
     private static final GuestUser guestUser = new GuestUser();
@@ -27,14 +27,14 @@ public abstract class User implements UserInterface {
 
     // Constructor
     public User(String username, String password) throws ExistentUserException {
-        if (database.containsKey(username)) {
+        if (users.containsKey(username)) {
             throw new ExistentUserException(username);
         }
 
         this.username = username;
         this.password = password;
 
-        database.put(username, this);
+        users.put(username, this);
     }
 
     protected User() {
@@ -61,8 +61,8 @@ public abstract class User implements UserInterface {
 
     // Account methods
     public static User findUser(String username) {
-        if (database.containsKey(username)) {
-            return database.get(username);
+        if (users.containsKey(username)) {
+            return users.get(username);
         }
         return null;
 
@@ -101,7 +101,7 @@ public abstract class User implements UserInterface {
     @Override
     public boolean deleteAccount(String password) {
         if (getPassword().equalsIgnoreCase(password)) {
-            User user = database.remove(this);
+            users.remove(getUsername());
             logout();
             return true;
         }
