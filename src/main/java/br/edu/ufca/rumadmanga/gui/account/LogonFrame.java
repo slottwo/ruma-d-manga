@@ -1,6 +1,5 @@
 package br.edu.ufca.rumadmanga.gui.account;
 
-import br.edu.ufca.rumadmanga.account.User;
 import br.edu.ufca.rumadmanga.account.Client;
 import br.edu.ufca.rumadmanga.account.ExistentUserException;
 import javax.swing.*;

@@ -10,14 +10,14 @@ import br.edu.ufca.rumadmanga.gui.account.Login;
  *
  * @author Ana Luiza Gonçalves
  */
-public class MainJFrame extends JanelasJFrame {
+public class InícioJFrame extends javax.swing.JFrame   {
 
     private static String[] args;
 
     /**
      * Creates new form JanelaaJFrame
      */
-    public MainJFrame() {
+    public InícioJFrame() {
         initComponents();
     }
 
@@ -206,7 +206,7 @@ public class MainJFrame extends JanelasJFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void callLogado() {
-        LogadoJFrame.main(args);
+        InícioLogadoJFrame.main(args);
     }
     
     /**
@@ -226,16 +226,17 @@ public class MainJFrame extends JanelasJFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InícioJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
-        MainJFrame.args = args;
+        InícioJFrame.args = args;
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainJFrame().setVisible(true);
+                new InícioJFrame().setVisible(true);
             }
         });
     }

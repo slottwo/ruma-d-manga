@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  *
  * @author Ana Luiza Gonçalves
  */
-public class LogadoJFrame extends JanelasJFrame {
+public class InícioLogadoJFrame extends javax.swing.JFrame {
 
     private static String[] args;
 
     /**
-     * Creates new form LogadoJFrame
+     * Creates new form InícioLogadoJFrame
      */
-    public LogadoJFrame() {
+    public InícioLogadoJFrame() {
         initComponents();
     }
 
@@ -161,7 +161,7 @@ public class LogadoJFrame extends JanelasJFrame {
         User.logout();  // Logout
         JOptionPane.showMessageDialog(this, "Você foi Deslogado");
         this.dispose();
-        MainJFrame.main(args);
+        InícioJFrame.main(args);
 
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -205,22 +205,29 @@ public class LogadoJFrame extends JanelasJFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LogadoJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InícioLogadoJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LogadoJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InícioLogadoJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LogadoJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InícioLogadoJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LogadoJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InícioLogadoJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
-        LogadoJFrame.args = args;
+        InícioLogadoJFrame.args = args;
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LogadoJFrame().setVisible(true);
+                new InícioLogadoJFrame().setVisible(true);
             }
         });
     }

@@ -10,7 +10,7 @@ import br.edu.ufca.rumadmanga.gui.account.Login;
  *
  * @author Ana Luiza Gonçalves
  */
-public class PesquisaJFrame extends JanelasJFrame {
+public class PesquisaJFrame extends javax.swing.JFrame {
 
     private static String[] args;
 

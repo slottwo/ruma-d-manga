@@ -11,7 +11,7 @@ import br.edu.ufca.rumadmanga.gui.account.Login;
  *
  * @author Ana Luiza Gonçalves
  */
-public class BibliotecaJFrame extends JanelasJFrame {
+public class BibliotecaJFrame extends javax.swing.JFrame   {
 
     /** Creates new form PesquisaJFrame */
     public BibliotecaJFrame() {
