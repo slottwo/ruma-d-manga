@@ -4,10 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 /**
  *
  * @author slottwo
@@ -17,7 +13,7 @@ public class MalRestAPI {
     public static void main(String[] args) throws ClientIdException {
         String CLIENT_ID;
 
-        File file = new File("CLIENT-ID");
+        File file = new File("src/main/resources/br/edu/ufca/rumadmanga/CLIENT-ID");
         try (Scanner reader = new Scanner(file)) {
             if (reader.hasNextLine()) {
                 CLIENT_ID = reader.nextLine();

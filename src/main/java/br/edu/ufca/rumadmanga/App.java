@@ -3,16 +3,12 @@ package br.edu.ufca.rumadmanga;
 import br.edu.ufca.rumadmanga.gui.MainJFrame;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 import javafx.scene.control.Label;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 /**
  * JavaFX App
@@ -26,11 +22,10 @@ public class App extends Application {
 
         var label = new Label("Olá Otaku!\n\n"
                 + "Bem Vindo ao Ruma d'Mangá\n"
-//                + "Aguarde enquanto concentramos nosso Ki...\n"
+                // + "Aguarde enquanto concentramos nosso Ki...\n"
                 + "\nMe feche para adentrar no\nintrigante mundo dos Mangá");
         label.setFont(new Font(14));
         label.setTextAlignment(TextAlignment.CENTER);
-        
         var scene = new Scene(new StackPane(label), 400, 300);
         stage.setScene(scene);
         stage.show();
