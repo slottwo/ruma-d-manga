@@ -2,6 +2,7 @@ package br.edu.ufca.rumadmanga.gui.account;
 
 import br.edu.ufca.rumadmanga.account.Client;
 import br.edu.ufca.rumadmanga.account.ExistentUserException;
+import br.edu.ufca.rumadmanga.gui.JanelasJFrame;
 import javax.swing.JFrame;
 
 import java.awt.event.WindowAdapter;
@@ -9,7 +10,7 @@ import java.awt.event.WindowEvent;
 
 public class Login {
 
-    public static void main(JFrame rootFrame) {
+    public static void main(JanelasJFrame rootFrame) {
         LoginFrame loginFrame = new LoginFrame();
         LogonFrame logonFrame = new LogonFrame();
         loginFrame.setLogon(logonFrame);

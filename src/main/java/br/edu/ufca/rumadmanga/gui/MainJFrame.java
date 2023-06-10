@@ -10,7 +10,9 @@ import br.edu.ufca.rumadmanga.gui.account.Login;
  *
  * @author Ana Luiza Gonçalves
  */
-public class MainJFrame extends javax.swing.JFrame {
+public class MainJFrame extends JanelasJFrame {
+
+    private static String[] args;
 
     /**
      * Creates new form JanelaaJFrame
@@ -54,7 +56,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel2.setText("Ruma d'Mangá!");
 
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/usuario-do-circulo.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/usuário.png"))); // NOI18N
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -69,7 +71,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/lupinha-1.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/busca.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -194,7 +196,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        PesquisaJFrame.main();
+        PesquisaJFrame.main(args);
         this.setVisible(false);
 
     }//GEN-LAST:event_jButton2MouseClicked
@@ -203,6 +205,10 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void callLogado() {
+        LogadoJFrame.main(args);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -219,19 +225,12 @@ public class MainJFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
+        MainJFrame.args = args;
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

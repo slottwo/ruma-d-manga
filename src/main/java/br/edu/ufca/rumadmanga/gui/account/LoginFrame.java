@@ -1,7 +1,7 @@
 package br.edu.ufca.rumadmanga.gui.account;
 
 import br.edu.ufca.rumadmanga.account.Client;
-import br.edu.ufca.rumadmanga.gui.account.LogonFrame;
+import br.edu.ufca.rumadmanga.gui.JanelasJFrame;
 import javax.swing.*;
 
 import java.awt.*;
@@ -20,7 +20,7 @@ public class LoginFrame extends JFrame implements ActionListener {
     JButton logonButton = new JButton("CRIAR NOVA CONTA");
     JCheckBox showPassword = new JCheckBox("Mostrar Senha");
     LogonFrame logonFrame;
-    JFrame rootFrame;
+    JanelasJFrame rootFrame;
 
     LoginFrame() {
         setLayoutManager();
@@ -33,7 +33,7 @@ public class LoginFrame extends JFrame implements ActionListener {
         logonFrame = frame;
     }
 
-    void setRoot(JFrame frame) {
+    void setRoot(JanelasJFrame frame) {
         rootFrame = frame;
     }
 
@@ -84,7 +84,7 @@ public class LoginFrame extends JFrame implements ActionListener {
                 this.rootFrame.setEnabled(true);
                 this.rootFrame.requestFocus();
                 this.dispose();
-                this.rootFrame.dispose();
+                this.rootFrame.fireLogged();
             } else {
                 JOptionPane.showMessageDialog(this, "Nome ou Senha incorreta");
             }

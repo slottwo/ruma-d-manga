@@ -11,7 +11,9 @@ import javax.swing.JOptionPane;
  *
  * @author Ana Luiza Gonçalves
  */
-public class LogadoJFrame extends javax.swing.JFrame {
+public class LogadoJFrame extends JanelasJFrame {
+
+    private static String[] args;
 
     /**
      * Creates new form LogadoJFrame
@@ -50,7 +52,7 @@ public class LogadoJFrame extends javax.swing.JFrame {
         jLabel2.setText("Ruma d'Mangá!");
 
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projetomangaa/icons/sair.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/sair.png"))); // NOI18N
         jButton1.setToolTipText("");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -66,7 +68,7 @@ public class LogadoJFrame extends javax.swing.JFrame {
         });
 
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projetomangaa/icons/lupinha-1.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/lupinha-1.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -80,7 +82,7 @@ public class LogadoJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projetomangaa/icons/estante.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/estante.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -115,7 +117,7 @@ public class LogadoJFrame extends javax.swing.JFrame {
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 140, 140));
@@ -159,7 +161,6 @@ public class LogadoJFrame extends javax.swing.JFrame {
         User.logout();  // Logout
         JOptionPane.showMessageDialog(this, "Você foi Deslogado");
         this.dispose();
-        String[] args = {};
         MainJFrame.main(args);
 
     }//GEN-LAST:event_jButton1MouseClicked
@@ -170,7 +171,7 @@ public class LogadoJFrame extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        PesquisaJFrame.main();
+        PesquisaJFrame.main(args);
         this.setVisible(false);
 
     }//GEN-LAST:event_jButton2MouseClicked
@@ -213,6 +214,8 @@ public class LogadoJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(LogadoJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+
+        LogadoJFrame.args = args;
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
