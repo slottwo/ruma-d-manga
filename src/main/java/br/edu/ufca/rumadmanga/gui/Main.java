@@ -11,7 +11,10 @@ package br.edu.ufca.rumadmanga.gui;
 public class Main {
     
     public static void main(String[] args) {
+       InícioJFrame início = new InícioJFrame();
+       InícioLogadoJFrame inícioLogado = new InícioLogadoJFrame();
        
+//       início 
     }
     
 }

@@ -122,6 +122,7 @@ public class PesquisaJFrame extends javax.swing.JFrame {
         jTextField1.setForeground(new java.awt.Color(255, 140, 140));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField1.setText("Buscar por Mangá");
+        jTextField1.setToolTipText("");
         jTextField1.setSelectionColor(new java.awt.Color(255, 255, 255));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

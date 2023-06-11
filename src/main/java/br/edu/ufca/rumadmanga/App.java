@@ -1,6 +1,7 @@
 package br.edu.ufca.rumadmanga;
 
 import br.edu.ufca.rumadmanga.gui.InícioJFrame;
+import br.edu.ufca.rumadmanga.gui.Main;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -33,6 +34,7 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+//        Main.main(args);
         InícioJFrame.main(args);
 
     }

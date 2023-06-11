@@ -136,6 +136,7 @@ public class InícioJFrame extends javax.swing.JFrame   {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList1.setCellRenderer(null);
         jList1.setMaximumSize(new java.awt.Dimension(310, 405));
         jList1.setPreferredSize(new java.awt.Dimension(310, 405));
         jScrollPane1.setViewportView(jList1);
@@ -147,7 +148,7 @@ public class InícioJFrame extends javax.swing.JFrame   {
         jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
         jTextArea1.setTabSize(10);
-        jTextArea1.setText("\tSobre\n\n                        Ruma d'Mangá!™\n                           Versão 1.0.0\n\n                               Autores\n               Ana Luiza Gonçalves Torres\n               Pedro Henrique S F Galvão\n\n\tFonte\n https://github.com/slottwo/ruma-d-manga\n\n                         Licença: GNU 3");
+        jTextArea1.setText("\n\tSobre\n\n                        Ruma d'Mangá!™\n                           Versão 1.0.0\n\n                               Autores\n               Ana Luiza Gonçalves Torres\n               Pedro Henrique S F Galvão\n\n\tFonte\nhttps://github.com/slottwo/ruma-d-manga\n\n                         Licença: GNU 3");
         jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,7 +161,7 @@ public class InícioJFrame extends javax.swing.JFrame   {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
@@ -198,16 +199,11 @@ public class InícioJFrame extends javax.swing.JFrame   {
         // TODO add your handling code here:
         PesquisaJFrame.main(args);
         this.setVisible(false);
-
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    public void callLogado() {
-        InícioLogadoJFrame.main(args);
-    }
     
     /**
      * @param args the command line arguments
