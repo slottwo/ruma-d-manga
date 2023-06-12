@@ -20,9 +20,6 @@ public class Main {
         início.setVisible(true);
         inícioLogado = new InícioLogadoJFrame();
         pesquisa = new PesquisaJFrame();
-
-//      inícioLogado.setVisible(false);
-//      pesquisa.setVisible(false);
 //      biblioteca = new BibliotecaJFrame();
 //      biblioteca.setVisible(false);
     }

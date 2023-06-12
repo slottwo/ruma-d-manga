@@ -5,6 +5,12 @@
 package br.edu.ufca.rumadmanga.gui;
 
 import br.edu.ufca.rumadmanga.gui.account.Login;
+import br.edu.ufca.rumadmanga.http.MalRestAPI;
+import br.edu.ufca.rumadmanga.http.request.Request;
+import br.edu.ufca.rumadmanga.http.request.RequestManga;
+import br.edu.ufca.rumadmanga.http.request.RequestSearch;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -132,6 +138,11 @@ public class PesquisaJFrame extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/busca.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -159,11 +170,6 @@ public class PesquisaJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "aaaaa" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -221,6 +227,17 @@ public class PesquisaJFrame extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        RequestSearch request = new RequestSearch();
+        try {
+            request.setSearch(jTextField1.getText());
+            MalRestAPI.main(request);
+
+        } catch (Exception ex) {
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
