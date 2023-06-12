@@ -1,4 +1,4 @@
-package request;
+package br.edu.ufca.rumadmanga.http.request;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -9,7 +9,6 @@ public interface RequestInterface {
     public URI getURI() throws URISyntaxException;
 
     // Setters
-
     public void setFields(ArrayList<Field> fields);
 
     public void setFields(Field[] fields);
@@ -17,7 +16,6 @@ public interface RequestInterface {
     public void addField(Field field);
 
     // Getters
-
     public String getAPI_URL();
 
     public String getPATH();
@@ -25,7 +23,6 @@ public interface RequestInterface {
     public String getFields();
 
     // Special Getters
-
     public String getPathParameters();
 
     public String getQueryParameters();

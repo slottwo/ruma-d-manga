@@ -1,6 +1,7 @@
-package request;
+package br.edu.ufca.rumadmanga.http.request;
 
 public class RequestRanking extends RequestList {
+
     private String PATH = "manga/ranking";
     private Type type = Type.MANGA;
 

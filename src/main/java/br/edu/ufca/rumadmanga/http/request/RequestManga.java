@@ -1,6 +1,7 @@
-package request;
+package br.edu.ufca.rumadmanga.http.request;
 
 public class RequestManga extends Request {
+
     private final String PATH = "manga";
     private Integer id;
 

@@ -1,4 +1,4 @@
-package request;
+package br.edu.ufca.rumadmanga.http.request;
 
 public enum Field {
     id("id"),

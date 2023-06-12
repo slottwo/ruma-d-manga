@@ -1,4 +1,4 @@
-package request;
+package br.edu.ufca.rumadmanga.http.request;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public abstract class RequestList extends Request implements RequestListInterface{
+public abstract class RequestList extends Request implements RequestListInterface {
+
     private String PATH = "manga";
     private Integer limit = 100;
     private Integer offset = 0;
@@ -26,7 +27,6 @@ public abstract class RequestList extends Request implements RequestListInterfac
     }
 
     // Special Getters
-
     @Override
     public String getPathParameters() {
         return getPATH();
@@ -53,7 +53,6 @@ public abstract class RequestList extends Request implements RequestListInterfac
     public abstract String getQuery();
 
     // Getters
-
     public String getPATH() {
         return PATH;
     }
@@ -67,7 +66,6 @@ public abstract class RequestList extends Request implements RequestListInterfac
     }
 
     // Setters
-
     public void setLimit(Integer limit) throws Exception {
         if (0 < limit && limit <= 100) {
             this.limit = limit;
