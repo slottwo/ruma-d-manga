@@ -53,6 +53,11 @@ public class BibliotecaJFrame extends javax.swing.JFrame   {
 
         jLabel2.setFont(new java.awt.Font("Broadway", 0, 48)); // NOI18N
         jLabel2.setText("Ruma d'Mangá!");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton4.setText("Login");
@@ -84,7 +89,7 @@ public class BibliotecaJFrame extends javax.swing.JFrame   {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 140, 140));
@@ -188,6 +193,11 @@ public class BibliotecaJFrame extends javax.swing.JFrame   {
         // TODO add your handling code here:
         Login.main(this);
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        Main.inícioLogado.setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments

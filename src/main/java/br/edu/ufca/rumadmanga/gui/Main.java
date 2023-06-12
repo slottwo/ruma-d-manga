@@ -9,12 +9,21 @@ package br.edu.ufca.rumadmanga.gui;
  * @author slottwo
  */
 public class Main {
-    
+
+    public static InícioJFrame início;
+    public static InícioLogadoJFrame inícioLogado;
+    public static PesquisaJFrame pesquisa;
+    public static BibliotecaJFrame biblioteca;
+
     public static void main(String[] args) {
-       InícioJFrame início = new InícioJFrame();
-       InícioLogadoJFrame inícioLogado = new InícioLogadoJFrame();
-       
-//       início 
+        início = new InícioJFrame();
+        início.setVisible(true);
+        inícioLogado = new InícioLogadoJFrame();
+        pesquisa = new PesquisaJFrame();
+
+//      inícioLogado.setVisible(false);
+//      pesquisa.setVisible(false);
+//      biblioteca = new BibliotecaJFrame();
+//      biblioteca.setVisible(false);
     }
-    
 }

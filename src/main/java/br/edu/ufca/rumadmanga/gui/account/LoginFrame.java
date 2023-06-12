@@ -1,6 +1,7 @@
 package br.edu.ufca.rumadmanga.gui.account;
 
 import br.edu.ufca.rumadmanga.account.Client;
+import br.edu.ufca.rumadmanga.gui.Main;
 import javax.swing.*;
 
 import java.awt.*;
@@ -80,9 +81,14 @@ public class LoginFrame extends JFrame implements ActionListener {
 
             if (Client.login(userText, pwdText)) {
                 JOptionPane.showMessageDialog(this, "Login bem sucedido");
+
                 this.rootFrame.setEnabled(true);
-                this.rootFrame.requestFocus();
-                /* logar */
+                this.setFocusable(true);
+
+                Main.inícioLogado.setVisible(true);
+                this.rootFrame.setVisible(false);
+
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Nome ou Senha incorreta");
             }

@@ -13,34 +13,17 @@ import java.util.HashMap;
  */
 public class Client extends User {
 
-    // Personal manga library
-    private Library library;
-
-    // User Database
-    private static HashMap<String, Client> clients = new HashMap<>();
+    // Personal manga bookmarks
+    private Library bookmarks;
 
     // Constructor
     public Client(String username, String password) throws ExistentUserException {
         super(username, password);
-        if (clients.containsKey(username)) {
-            User.findUser(username).deleteAccount(password);
-            throw new ExistentUserException(username);
-        }
-        clients.put(username, this);
-        library = new Library();
-    }
-
-    @Override
-    public boolean deleteAccount(String password) {
-        if (super.deleteAccount(password)) {
-            clients.remove(getUsername());
-            return true;
-        }
-        return false;
+        bookmarks = new Library();
     }
 
     public Library getLibrary() {
-        return library;
+        return bookmarks;
     }
-
+    
 }

@@ -18,4 +18,27 @@ public class MangaList {
     private URI previous;
     private URI next;
 
+    public List<Manga> getData() {
+        return data;
+    }
+
+    public void setData(List<Manga> data) {
+        this.data = data;
+    }
+
+    public URI getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(URI previous) {
+        this.previous = previous;
+    }
+
+    public URI getNext() {
+        return next;
+    }
+
+    public void setNext(URI next) {
+        this.next = next;
+    }
 }

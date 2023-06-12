@@ -79,7 +79,7 @@ public abstract class User implements UserInterface {
         return false;
     }
 
-    public static boolean isLogged() {
+    public static boolean someoneIsLogged() {
         return loggedUser != guestUser;
     }
 

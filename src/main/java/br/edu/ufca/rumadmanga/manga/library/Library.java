@@ -5,8 +5,8 @@
 package br.edu.ufca.rumadmanga.manga.library;
 
 import br.edu.ufca.rumadmanga.manga.Manga;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
 
 /**
  *
@@ -14,17 +14,32 @@ import java.util.List;
  */
 public class Library {
 
-    private List<Manga> mangas = new ArrayList<Manga>();
+    private HashMap<Integer, Manga> mangas = new HashMap<>();
 
-    public void addManga(Manga manga) {
-        mangas.add(manga);
+    public boolean addManga(Manga manga) {
+        if (mangas.containsKey(manga.getId())) {
+            mangas.put(manga.getId(), manga);
+            return true;
+        }
+        return false;
     }
 
-    public void removeManga(Manga manga) {
-        mangas.remove(manga);
+    public boolean removeManga(Manga manga) {
+        if (mangas.containsKey(manga.getId())) {
+            mangas.remove(manga.getId(), manga);
+            return true;
+        }
+        return false;
     }
 
-    public List<Manga> getMangas() {
-        return mangas;
+    public Manga getManga(int id) {
+        if (mangas.containsKey(id)) {
+            return mangas.get(id);
+        }
+        return null;
+    }
+
+    public Collection<Manga> getMangas() {
+        return mangas.values();
     }
 }

@@ -10,9 +10,7 @@ import br.edu.ufca.rumadmanga.gui.account.Login;
  *
  * @author Ana Luiza Gonçalves
  */
-public class InícioJFrame extends javax.swing.JFrame   {
-
-    private static String[] args;
+public class InícioJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form JanelaaJFrame
@@ -90,13 +88,13 @@ public class InícioJFrame extends javax.swing.JFrame   {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(10, 10, 10)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +134,6 @@ public class InícioJFrame extends javax.swing.JFrame   {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList1.setCellRenderer(null);
         jList1.setMaximumSize(new java.awt.Dimension(310, 405));
         jList1.setPreferredSize(new java.awt.Dimension(310, 405));
         jScrollPane1.setViewportView(jList1);
@@ -197,14 +194,14 @@ public class InícioJFrame extends javax.swing.JFrame   {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        PesquisaJFrame.main(args);
         this.setVisible(false);
+        Main.pesquisa.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
@@ -226,8 +223,6 @@ public class InícioJFrame extends javax.swing.JFrame   {
         }
         //</editor-fold>
         //</editor-fold>
-
-        InícioJFrame.args = args;
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
