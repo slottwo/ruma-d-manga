@@ -9,6 +9,7 @@ import br.edu.ufca.rumadmanga.http.MalRestAPI;
 import br.edu.ufca.rumadmanga.http.request.Request;
 import br.edu.ufca.rumadmanga.http.request.RequestManga;
 import br.edu.ufca.rumadmanga.http.request.RequestSearch;
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -64,6 +65,7 @@ public class PesquisaJFrame extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/usuário.png"))); // NOI18N
+        jButton4.setToolTipText("Entrar");
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton4.setFocusPainted(false);
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -79,6 +81,7 @@ public class PesquisaJFrame extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/início.png"))); // NOI18N
+        jButton5.setToolTipText("Início");
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton5.setFocusPainted(false);
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,7 +119,7 @@ public class PesquisaJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 140, 140));
@@ -129,6 +132,14 @@ public class PesquisaJFrame extends javax.swing.JFrame {
         jTextField1.setText("Buscar por Mangá");
         jTextField1.setToolTipText("");
         jTextField1.setSelectionColor(new java.awt.Color(127, 127, 255));
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -137,6 +148,7 @@ public class PesquisaJFrame extends javax.swing.JFrame {
 
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ufca/rumadmanga/icons/busca.png"))); // NOI18N
+        jButton2.setToolTipText("Buscar");
         jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -233,11 +245,28 @@ public class PesquisaJFrame extends javax.swing.JFrame {
         RequestSearch request = new RequestSearch();
         try {
             request.setSearch(jTextField1.getText());
-            MalRestAPI.main(request);
+            MalRestAPI.connect(request);
 
         } catch (Exception ex) {
         }
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // TODO add your handling code here:
+        
+        if (jTextField1.getText().compareTo("Buscar por Mangá") == 0) {
+            jTextField1.setText("");
+            jTextField1.setForeground(new Color(255,87,87));
+        }
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        // TODO add your handling code here:
+        if (jTextField1.getText().compareTo("") == 0) {
+            jTextField1.setText("Buscar por Mangá");
+            jTextField1.setForeground(new Color(255,140,140));
+        }
+    }//GEN-LAST:event_jTextField1FocusLost
 
     /**
      * @param args the command line arguments

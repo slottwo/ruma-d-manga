@@ -5,6 +5,8 @@
 package br.edu.ufca.rumadmanga.gui;
 
 import br.edu.ufca.rumadmanga.gui.account.Login;
+import br.edu.ufca.rumadmanga.http.MalRestAPI;
+import br.edu.ufca.rumadmanga.http.request.RequestRanking;
 
 /**
  *
@@ -17,6 +19,11 @@ public class InícioJFrame extends javax.swing.JFrame {
      */
     public InícioJFrame() {
         initComponents();
+        RequestRanking request = new RequestRanking();
+        try {
+            MalRestAPI.connect(request);
+        } catch (Exception ex) {
+        }
     }
 
     /**
@@ -108,7 +115,7 @@ public class InícioJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 140, 140));
@@ -134,6 +141,7 @@ public class InícioJFrame extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jList1.setMaximumSize(new java.awt.Dimension(310, 405));
         jList1.setPreferredSize(new java.awt.Dimension(310, 405));
         jScrollPane1.setViewportView(jList1);
