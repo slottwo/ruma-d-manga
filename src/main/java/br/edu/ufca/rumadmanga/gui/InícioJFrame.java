@@ -7,6 +7,7 @@ package br.edu.ufca.rumadmanga.gui;
 import br.edu.ufca.rumadmanga.gui.account.Login;
 import br.edu.ufca.rumadmanga.http.MalRestAPI;
 import br.edu.ufca.rumadmanga.http.request.RequestRanking;
+import br.edu.ufca.rumadmanga.http.response.MangaList;
 
 /**
  *
@@ -21,7 +22,7 @@ public class InícioJFrame extends javax.swing.JFrame {
         initComponents();
         RequestRanking request = new RequestRanking();
         try {
-            MalRestAPI.connect(request);
+            MangaList ranking = new MangaList(MalRestAPI.connect(request));
         } catch (Exception ex) {
         }
     }

@@ -15,11 +15,6 @@ import java.net.*;
  * @author slottwo
  */
 public class MalRestAPI {
-    
-    public static MangaList genMangaList() {
-        
-        return null;
-    }
 
     public static StringBuffer connect(Request request) throws ClientIdException, Exception {
         // Get app authentification key
@@ -63,8 +58,6 @@ public class MalRestAPI {
         while ((inputLine = in.readLine()) != null) {
             content.append(inputLine);
         }
-
-        System.out.println(content);
 
         con.disconnect();
 
